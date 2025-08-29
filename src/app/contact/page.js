@@ -5,12 +5,6 @@ import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
 
-export const metadata = {
-    title: 'Contact Us - Nexus Digital | Get in Touch',
-    description: 'Contact Nexus Digital for your digital transformation needs. Based in Dubai, serving businesses across the UAE.',
-    keywords: 'contact digital agency Dubai, digital agency contact UAE',
-};
-
 const services = [
     'Website Development',
     'Mobile App Development',
