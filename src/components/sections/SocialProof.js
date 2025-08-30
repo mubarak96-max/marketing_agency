@@ -108,15 +108,15 @@ const SocialProof = () => {
                 </div>
 
                 {/* Recent Wins Ticker */}
-                <div className="bg-card-light rounded-lg p-6 mb-16 shadow-lg border border-border-light">
-                    <div className="flex items-center justify-between">
+                <div className="bg-card-light rounded-lg p-4 md:p-6 mb-16 shadow-lg border border-border-light">
+                    <div className="flex items-center justify-between mb-2 md:mb-0">
                         <div className="flex items-center">
-                            <TrendingUp className="w-6 h-6 text-brand-primary mr-3" />
-                            <h3 className="text-lg font-semibold text-text-on-light">Recent Wins</h3>
+                            <TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-brand-primary mr-2 md:mr-3" />
+                            <h3 className="text-base md:text-lg font-semibold text-text-on-light">Recent Wins</h3>
                         </div>
-                        <div className="text-sm text-text-muted-light">Live Updates</div>
+                        <div className="text-xs md:text-sm text-text-muted-light">Live Updates</div>
                     </div>
-                    <div className="mt-4 h-48 overflow-hidden relative">
+                    <div className="mt-3 md:mt-4 h-40 md:h-48 overflow-hidden relative">
                         <div
                             className="absolute w-full transition-none"
                             style={{
@@ -125,14 +125,14 @@ const SocialProof = () => {
                             }}
                         >
                             {duplicatedWins.map((win, index) => (
-                                <div key={index} className="h-12 py-2 flex items-center justify-between border-b border-border-light last:border-b-0">
-                                    <div className="flex items-center">
-                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-3"></div>
-                                        <span className="font-medium text-text-on-light">{win.client}</span>
-                                        <span className="mx-2 text-text-muted-light">•</span>
-                                        <span className="text-dubai-gold font-semibold">{win.metric}</span>
+                                <div key={index} className="h-10 md:h-12 py-1 md:py-2 flex items-center justify-between border-b border-border-light last:border-b-0">
+                                    <div className="flex items-center flex-1 min-w-0">
+                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2 md:mr-3 flex-shrink-0"></div>
+                                        <span className="font-medium text-text-on-light text-xs md:text-sm truncate">{win.client}</span>
+                                        <span className="mx-1 md:mx-2 text-text-muted-light text-xs md:text-sm">•</span>
+                                        <span className="text-dubai-gold font-semibold text-xs md:text-sm truncate">{win.metric}</span>
                                     </div>
-                                    <span className="text-sm text-gray-500">{win.date}</span>
+                                    <span className="text-xs text-gray-500 ml-2 flex-shrink-0">{win.date}</span>
                                 </div>
                             ))}
                         </div>
