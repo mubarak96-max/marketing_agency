@@ -59,10 +59,11 @@ export const services = [
         description: 'Strategic social media management and content creation',
         features: ['Content Creation', 'Community Management', 'Influencer Partnerships'],
         platforms: ['Instagram', 'TikTok', 'LinkedIn', 'Twitter'],
+        technologies: ['Canva', 'Adobe Creative Suite', 'Hootsuite', 'Buffer', 'Meta Business Manager', 'Google Analytics'],
         price: 'Starting from AED 3,000/month',
         deliveryTime: 'Ongoing',
         details: {
-            overview: 'Build your brand presence and engage your audience effectively.',
+            overview: 'Build your brand presence and engage your audience effectively with data-driven social media strategies.',
             process: [
                 'Strategy Development',
                 'Content Planning',
@@ -130,6 +131,38 @@ export const services = [
                 'User Training',
                 'Documentation',
                 '3 Months Support'
+            ]
+        }
+    },
+    {
+        id: 'ecommerce-setup',
+        title: 'E-commerce Setup',
+        icon: 'ShoppingCart',
+        description: 'Complete e-commerce solutions from setup to optimization',
+        features: ['Online Store Setup', 'Payment Integration', 'Inventory Management'],
+        technologies: ['Shopify', 'WooCommerce', 'Magento', 'Stripe', 'PayPal', 'Aramex', 'Talabat'],
+        platforms: ['Shopify', 'WooCommerce', 'Custom Solutions'],
+        price: 'Starting from AED 6,000',
+        deliveryTime: '3-6 weeks',
+        details: {
+            overview: 'Launch your online business with a professional e-commerce platform tailored for the UAE market.',
+            process: [
+                'Business Analysis',
+                'Platform Selection',
+                'Store Setup & Design',
+                'Payment & Shipping Integration',
+                'Testing & Launch',
+                'Training & Support'
+            ],
+            includes: [
+                'Complete Store Setup',
+                'Mobile-Responsive Design',
+                'Payment Gateway Integration',
+                'Shipping Setup',
+                'Product Upload (up to 50 items)',
+                'SEO Optimization',
+                'Analytics Setup',
+                '2 Months Support'
             ]
         }
     }

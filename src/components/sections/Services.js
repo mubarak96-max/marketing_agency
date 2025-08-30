@@ -56,7 +56,7 @@ const Services = () => {
                         return (
                             <Link
                                 key={service.id}
-                                href={`/services#${service.id}`}
+                                href={`/services/${service.id}`}
                                 className="transform transition-all duration-300 hover:-translate-y-2"
                             >
                                 <Card variant="hover" className="p-6 h-full">

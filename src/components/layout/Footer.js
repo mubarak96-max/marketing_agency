@@ -19,13 +19,13 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-dubai-dark text-luxury-white">
+        <footer className="bg-section-dark text-text-on-dark border-t border-border-dark">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* About Column */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4">About Nexus Digital</h3>
-                        <p className="text-gray-300 mb-4">
+                        <h3 className="text-xl font-bold mb-4 text-brand-accent">About Nexus Digital</h3>
+                        <p className="text-text-muted-dark mb-4">
                             Dubai's premier digital growth agency specializing in web development,
                             marketing, and custom solutions for ambitious businesses.
                         </p>
@@ -67,33 +67,6 @@ const Footer = () => {
                             <li>
                                 <Link href="/services" className="text-gray-300 hover:text-dubai-gold">
                                     Performance Marketing
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Industries Column */}
-                    <div>
-                        <h3 className="text-xl font-bold mb-4">Industries</h3>
-                        <ul className="space-y-2">
-                            <li>
-                                <Link href="/industries" className="text-gray-300 hover:text-dubai-gold">
-                                    Real Estate
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/industries" className="text-gray-300 hover:text-dubai-gold">
-                                    Hospitality
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/industries" className="text-gray-300 hover:text-dubai-gold">
-                                    E-commerce
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/industries" className="text-gray-300 hover:text-dubai-gold">
-                                    Health & Beauty
                                 </Link>
                             </li>
                         </ul>

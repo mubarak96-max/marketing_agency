@@ -29,13 +29,13 @@ const caseStudies = [
 
 const CaseStudies = () => {
     return (
-        <section className="py-20 bg-dubai-dark">
+        <section className="py-20 bg-section-light">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-luxury-white mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-text-on-light mb-4">
                         Success Stories
                     </h2>
-                    <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-lg text-text-muted-light max-w-2xl mx-auto">
                         Real results for real businesses in Dubai.
                         See how we've helped our clients achieve exceptional growth.
                     </p>
@@ -46,7 +46,7 @@ const CaseStudies = () => {
                         <Card
                             key={study.id}
                             variant="hover"
-                            className="overflow-hidden bg-dubai-light text-luxury-white"
+                            className="overflow-hidden bg-card-light border border-border-light"
                         >
                             <div className="relative h-48">
                                 <div className="absolute inset-0 bg-gradient-to-t from-dubai-dark to-transparent z-10" />

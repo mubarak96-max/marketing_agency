@@ -1,7 +1,9 @@
 import Hero from '@/components/sections/Hero';
-import Services from '@/components/sections/Services';
+import EnhancedServices from '@/components/sections/EnhancedServices';
+import SocialProof from '@/components/sections/SocialProof';
 import CaseStudies from '@/components/sections/CaseStudies';
-import Industries from '@/components/sections/Industries';
+import FreeTools from '@/components/sections/FreeTools';
+import ReferralProgram from '@/components/sections/ReferralProgram';
 import { MessageCircle } from 'lucide-react';
 
 export const metadata = {
@@ -18,16 +20,18 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Services />
+      <SocialProof />
+      <EnhancedServices />
       <CaseStudies />
-      <Industries />
+      <FreeTools />
+      <ReferralProgram />
 
       {/* WhatsApp floating button */}
       <a
         href="https://wa.me/971XXXXXXXX"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300"
+        className="fixed bottom-6 right-6 z-50 bg-brand-primary text-white p-4 rounded-full shadow-lg hover:bg-brand-accent transition-all duration-300"
       >
         <MessageCircle className="w-6 h-6" />
       </a>

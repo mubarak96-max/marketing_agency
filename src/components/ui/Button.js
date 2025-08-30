@@ -11,9 +11,9 @@ const Button = ({
     const baseStyles = 'inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
 
     const variants = {
-        primary: 'bg-dubai-gold text-dubai-dark hover:bg-opacity-90',
-        secondary: 'bg-dubai-light text-luxury-white hover:bg-dubai-accent',
-        outline: 'border-2 border-dubai-gold text-dubai-gold hover:bg-dubai-gold hover:text-dubai-dark',
+        primary: 'bg-brand-primary text-white hover:bg-brand-accent hover:text-text-on-light shadow-lg hover:shadow-xl',
+        secondary: 'bg-section-medium text-text-on-dark hover:bg-brand-accent hover:text-text-on-light',
+        outline: 'border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white',
     };
 
     return (

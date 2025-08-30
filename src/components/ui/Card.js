@@ -9,9 +9,10 @@ const Card = ({
     const baseStyles = 'rounded-lg overflow-hidden transition-all duration-300';
 
     const variants = {
-        default: 'bg-white shadow-md hover:shadow-lg',
-        hover: 'bg-white shadow-md hover:shadow-xl hover:-translate-y-1',
-        featured: 'bg-dubai-light text-luxury-white shadow-xl hover:shadow-2xl hover:-translate-y-2',
+        default: 'bg-card-light shadow-md hover:shadow-lg border border-border-light',
+        hover: 'bg-card-light shadow-md hover:shadow-xl hover:-translate-y-1 border border-border-light',
+        featured: 'bg-brand-primary text-white shadow-xl hover:shadow-2xl hover:-translate-y-2',
+        dark: 'bg-card-dark shadow-md hover:shadow-lg border border-border-dark text-text-on-dark',
     };
 
     return (

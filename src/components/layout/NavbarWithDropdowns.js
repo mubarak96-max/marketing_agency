@@ -6,15 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import Button from '../ui/Button';
 import { services } from '@/data/services';
-import { LanguageSwitcher, useLanguage } from '@/components/i18n/LanguageProvider';
-import { trackCTAClick } from '@/components/analytics/Analytics';
 
-const Navbar = () => {
+const NavbarWithDropdowns = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const pathname = usePathname();
     const dropdownRefs = useRef({});
-    const { t, isRTL } = useLanguage();
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -47,11 +44,12 @@ const Navbar = () => {
             name: 'Services',
             href: '/services',
             hasDropdown: true,
-            dropdownItems: services?.map(service => ({
+            dropdownItems: services.map(service => ({
                 name: service.title,
                 href: `/services/${service.id}`,
+                icon: service.icon,
                 description: service.description
-            })) || []
+            }))
         },
         { name: 'Portfolio', href: '/portfolio' },
         { name: 'Blog', href: '/blog' },
@@ -60,12 +58,12 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="sticky top-0 z-50 bg-section-white/95 backdrop-blur-md border-b border-border-light">
+        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-2xl font-bold text-text-on-light">
+                        <Link href="/" className="text-2xl font-bold text-dubai-dark">
                             Nexus Digital
                         </Link>
                     </div>
@@ -84,11 +82,7 @@ const Navbar = () => {
                                             ? 'text-dubai-gold'
                                             : 'text-gray-700 hover:text-dubai-gold'
                                             } transition-colors duration-200`}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            e.stopPropagation();
-                                            toggleDropdown(item.name);
-                                        }}
+                                        onClick={() => toggleDropdown(item.name)}
                                     >
                                         {item.name}
                                         <ChevronDown className={`ml-1 w-4 h-4 transform transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''
@@ -108,11 +102,8 @@ const Navbar = () => {
 
                                 {/* Dropdown Menu */}
                                 {item.hasDropdown && activeDropdown === item.name && (
-                                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-xl py-1 z-[100] border border-gray-200">
-                                        <div className="px-4 py-2 text-sm text-gray-500 border-b">
-                                            {item.name} ({item.dropdownItems?.length || 0} items)
-                                        </div>
-                                        {item.dropdownItems && item.dropdownItems.map((dropdownItem) => (
+                                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-2 z-50 border border-gray-100">
+                                        {item.dropdownItems.map((dropdownItem) => (
                                             <Link
                                                 key={dropdownItem.name}
                                                 href={dropdownItem.href}
@@ -120,11 +111,15 @@ const Navbar = () => {
                                                     ? 'text-dubai-gold bg-gray-50'
                                                     : 'text-gray-700 hover:text-dubai-gold hover:bg-gray-50'
                                                     } block px-4 py-2 transition-colors duration-200`}
-                                                onClick={() => setActiveDropdown(null)}
                                             >
-                                                <div className="font-medium">{dropdownItem.name}</div>
-                                                <div className="text-xs text-gray-500 truncate">
-                                                    {dropdownItem.description}
+                                                <div className="flex items-center">
+                                                    <div>
+                                                        <div className="font-medium">{dropdownItem.name}</div>
+                                                        <div className="text-xs text-gray-500 truncate max-w-[200px]">
+                                                            {dropdownItem.description}
+                                                        </div>
+                                                    </div>
+                                                    <ChevronRight className="ml-auto w-4 h-4" />
                                                 </div>
                                             </Link>
                                         ))}
@@ -132,13 +127,7 @@ const Navbar = () => {
                                 )}
                             </div>
                         ))}
-                        <LanguageSwitcher className="mr-4" />
-                        <Button
-                            variant="primary"
-                            onClick={() => trackCTAClick('Book Strategy Call', 'navbar', '/contact')}
-                        >
-                            Book Strategy Call
-                        </Button>
+                        <Button variant="primary">Book Strategy Call</Button>
                     </div>
 
                     {/* Mobile menu button */}
@@ -170,12 +159,8 @@ const Navbar = () => {
                                             className={`flex items-center justify-between w-full ${pathname === item.href || pathname.startsWith(`${item.href}/`)
                                                 ? 'text-dubai-gold'
                                                 : 'text-gray-700 hover:text-dubai-gold'
-                                                } px-3 py-2 text-base`}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                toggleDropdown(item.name);
-                                            }}
+                                                } block px-3 py-2 text-base`}
+                                            onClick={() => toggleDropdown(item.name)}
                                         >
                                             {item.name}
                                             <ChevronDown className={`ml-1 w-4 h-4 transform transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''
@@ -184,7 +169,7 @@ const Navbar = () => {
 
                                         {/* Mobile Dropdown */}
                                         {activeDropdown === item.name && (
-                                            <div className="pl-4 space-y-1 bg-gray-50 rounded">
+                                            <div className="pl-4 space-y-1 bg-gray-50 rounded-md">
                                                 {item.dropdownItems.map((dropdownItem) => (
                                                     <Link
                                                         key={dropdownItem.name}
@@ -197,6 +182,7 @@ const Navbar = () => {
                                                         onClick={() => setIsMobileMenuOpen(false)}
                                                     >
                                                         <div className="font-medium">{dropdownItem.name}</div>
+                                                        <div className="text-xs text-gray-500 truncate">{dropdownItem.description}</div>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -228,4 +214,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavbarWithDropdowns;
