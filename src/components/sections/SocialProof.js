@@ -30,24 +30,6 @@ const SocialProof = () => {
         animateCounter(setClientSatisfaction, 98);
     }, []);
 
-    const certifications = [
-        {
-            name: 'Google Partner',
-            logo: '/images/google-partner.svg',
-            description: 'Certified Google Ads & Analytics Partner'
-        },
-        {
-            name: 'Meta Business Partner',
-            logo: '/images/meta-partner.svg',
-            description: 'Official Meta Business Partner'
-        },
-        {
-            name: 'Shopify Partner',
-            logo: '/images/shopify-partner.svg',
-            description: 'Shopify Plus Partner Agency'
-        }
-    ];
-
     const recentWins = [
         { client: 'Dubai Real Estate Co.', metric: '75% More Qualified Leads', date: '2 days ago' },
         { client: 'Luxury Hotel Group', metric: 'AED 320K Revenue Boost', date: '1 week ago' },
@@ -80,7 +62,7 @@ const SocialProof = () => {
     }, [recentWins.length]);
 
     return (
-        <section className="py-16 bg-section-light">
+        <section className="py-16 bg-section-light pt-96 md:pt-48">{/* Much more spacing on mobile (pt-96) between partners and this section */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Live Metrics Dashboard */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
@@ -154,29 +136,6 @@ const SocialProof = () => {
                                 </div>
                             ))}
                         </div>
-
-                    </div>
-                </div>
-
-                {/* Industry Certifications */}
-                <div className="text-center">
-                    <h3 className="text-2xl font-bold text-white mb-8">
-                        Certified & Trusted Partners
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {certifications.map((cert, index) => (
-                            <Card key={index} className="p-6 bg-white/90 backdrop-blur-sm text-center hover:scale-105 transition-transform duration-300">
-                                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                                    <img
-                                        src={cert.logo}
-                                        alt={cert.name}
-                                        className="w-full h-full object-contain"
-                                    />
-                                </div>
-                                <h4 className="font-semibold text-dubai-dark mb-2">{cert.name}</h4>
-                                <p className="text-sm text-gray-600">{cert.description}</p>
-                            </Card>
-                        ))}
                     </div>
                 </div>
             </div>
