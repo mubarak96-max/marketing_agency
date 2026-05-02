@@ -4,32 +4,29 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { LanguageProvider } from '@/components/i18n/LanguageProvider';
 import PageTracking from '@/components/analytics/Analytics';
-import ExitIntentPopup from '@/components/sections/ExitIntentPopup';
-import PWAInstall from '@/components/pwa/PWAInstall';
+import { organizationSchema, siteConfig } from '@/data/site';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Nexus Digital - Dubai\'s Premier Digital Agency | Web Development & Marketing',
-  description: 'Dubai\'s leading digital agency specializing in website development, app creation, and performance marketing. 500+ successful projects, guaranteed ROI.',
-  keywords: 'Dubai web development, UAE digital agency, website design Dubai, app development UAE',
+  metadataBase: new URL(siteConfig.domain),
+  title: 'Website Development Company in Uganda | Nexus Digital',
+  description: 'Nexus Digital is a Uganda web development, mobile app development, and digital marketing company helping businesses in Kampala and across Uganda grow online.',
+  keywords: 'website development company Uganda, web development company Uganda, mobile app development company Uganda, digital marketing company Uganda, website developers Uganda',
   manifest: '/manifest.json',
-  themeColor: '#1ba9ba',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
   robots: 'index, follow',
-  authors: [{ name: 'Nexus Digital' }],
+  authors: [{ name: siteConfig.brandName }],
   openGraph: {
-    title: 'Nexus Digital - Dubai Digital Agency',
-    description: 'Transform your business with Dubai\'s premier digital agency',
+    title: 'Website Development Company in Uganda | Nexus Digital',
+    description: 'Website development, mobile app development, PPC, and digital marketing services for businesses in Kampala and across Uganda.',
     images: ['/images/og-image.jpg'],
-    locale: 'en_AE',
-    alternateLocale: 'ar_AE',
+    locale: 'en_UG',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nexus Digital - Dubai Digital Agency',
-    description: 'Transform your business with Dubai\'s premier digital agency',
+    title: 'Website Development Company in Uganda | Nexus Digital',
+    description: 'Website development, app development, and digital marketing in Uganda.',
     images: ['/images/twitter-card.jpg'],
   },
   icons: {
@@ -39,15 +36,26 @@ export const metadata = {
   }
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#1ba9ba',
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         {/* PWA Meta Tags */}
-        <meta name="application-name" content="Nexus Digital" />
+        <meta name="application-name" content={siteConfig.brandName} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Nexus Digital" />
+        <meta name="apple-mobile-web-app-title" content={siteConfig.brandName} />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-config" content="/icons/browserconfig.xml" />
@@ -64,12 +72,6 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
-
-        {/* Arabic Font Support */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
 
         {/* Service Worker Registration */}
         <script
@@ -89,36 +91,6 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-
-        {/* Install PWA prompt */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              let deferredPrompt;
-              window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-                // Show install button or banner
-                const installBanner = document.getElementById('install-banner');
-                if (installBanner) {
-                  installBanner.style.display = 'block';
-                }
-              });
-              
-              function installPWA() {
-                if (deferredPrompt) {
-                  deferredPrompt.prompt();
-                  deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                      console.log('User accepted the install prompt');
-                    }
-                    deferredPrompt = null;
-                  });
-                }
-              }
-            `,
-          }}
-        />
       </head>
       <body className={`${inter.className} min-h-screen bg-white text-dubai-dark antialiased`}>
         <LanguageProvider>
@@ -126,8 +98,6 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main className="flex-grow">{children}</main>
             <Footer />
-            <ExitIntentPopup />
-            <PWAInstall />
             <PageTracking />
           </div>
         </LanguageProvider>

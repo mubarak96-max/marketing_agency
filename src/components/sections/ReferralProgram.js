@@ -28,7 +28,7 @@ const ReferralProgram = () => {
         {
             level: 'Bronze Referrer',
             referrals: '1-2',
-            reward: 'AED 500 credit',
+            reward: 'UGX 250,000 credit',
             bonus: 'Free website audit',
             icon: '🥉',
             color: 'from-yellow-600 to-yellow-700'
@@ -36,7 +36,7 @@ const ReferralProgram = () => {
         {
             level: 'Silver Referrer',
             referrals: '3-5',
-            reward: 'AED 1,500 credit',
+            reward: 'UGX 750,000 credit',
             bonus: 'Free SEO consultation',
             icon: '🥈',
             color: 'from-gray-400 to-gray-500'
@@ -44,7 +44,7 @@ const ReferralProgram = () => {
         {
             level: 'Gold Referrer',
             referrals: '6-10',
-            reward: 'AED 3,000 credit',
+            reward: 'UGX 1,500,000 credit',
             bonus: 'Free website redesign',
             icon: '🥇',
             color: 'from-yellow-400 to-yellow-500'
@@ -52,7 +52,7 @@ const ReferralProgram = () => {
         {
             level: 'Platinum Partner',
             referrals: '10+',
-            reward: 'AED 5,000+ credit',
+            reward: 'UGX 3,000,000+ credit',
             bonus: 'Partnership opportunities',
             icon: '💎',
             color: 'from-purple-400 to-purple-500'
@@ -232,7 +232,7 @@ const ReferralProgram = () => {
                                         <div className="text-sm text-gray-600">Referrals</div>
                                     </div>
                                     <div>
-                                        <div className="text-2xl font-bold text-dubai-gold">AED 0</div>
+                                        <div className="text-2xl font-bold text-dubai-gold">UGX 0</div>
                                         <div className="text-sm text-gray-600">Earned</div>
                                     </div>
                                     <div>

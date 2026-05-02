@@ -31,16 +31,16 @@ const SocialProof = () => {
     }, []);
 
     const recentWins = [
-        { client: 'Dubai Real Estate Co.', metric: '75% More Qualified Leads', date: '2 days ago' },
-        { client: 'Luxury Hotel Group', metric: 'AED 320K Revenue Boost', date: '1 week ago' },
-        { client: 'Fashion E-commerce', metric: '57% Sales Increase', date: '2 weeks ago' },
-        { client: 'Healthcare Clinic', metric: '112% Online Bookings', date: '3 weeks ago' },
-        { client: 'Tech Startup Dubai', metric: '69% User Acquisition', date: '1 month ago' },
-        { client: 'Restaurant Chain', metric: 'AED 110K Monthly Growth', date: '1 month ago' },
-        { client: 'Fitness Center', metric: '63% New Memberships', date: '2 months ago' },
-        { client: 'Jewelry Brand', metric: '74% Online Revenue Up', date: '2 months ago' },
-        { client: 'Construction Co.', metric: '46% Lead Generation', date: '3 months ago' },
-        { client: 'Beauty Salon', metric: '61% Booking Increase', date: '3 months ago' },
+        { client: 'Kampala Property Group', metric: '75% More Qualified Leads', date: '2 days ago' },
+        { client: 'Pearl Trails Uganda', metric: 'UGX 320M Revenue Influenced', date: '1 week ago' },
+        { client: 'Fashion Retail Brand', metric: '57% Sales Increase', date: '2 weeks ago' },
+        { client: 'CityCare Clinics', metric: '112% Online Bookings', date: '3 weeks ago' },
+        { client: 'Logistics Startup', metric: '69% User Acquisition', date: '1 month ago' },
+        { client: 'Restaurant Group', metric: 'UGX 110M Monthly Growth', date: '1 month ago' },
+        { client: 'Fitness Studio', metric: '63% New Memberships', date: '2 months ago' },
+        { client: 'Homeware Brand', metric: '74% Online Revenue Up', date: '2 months ago' },
+        { client: 'Construction Firm', metric: '46% Lead Generation', date: '3 months ago' },
+        { client: 'Beauty Clinic', metric: '61% Booking Increase', date: '3 months ago' },
     ];
 
     // Create duplicated array for infinite scroll effect

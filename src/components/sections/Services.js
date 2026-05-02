@@ -5,28 +5,28 @@ import { Monitor, Smartphone, Share2, TrendingUp, Database } from 'lucide-react'
 
 const services = [
     {
-        id: 'web-development',
+        id: 'website-development',
         title: 'Website Development',
         icon: Monitor,
-        description: 'Custom websites that convert visitors into customers. From simple landing pages to complex e-commerce platforms.',
+        description: 'Business websites, landing pages, and WordPress builds designed to convert traffic into enquiries.',
     },
     {
-        id: 'mobile-app',
+        id: 'mobile-app-development',
         title: 'Mobile App Development',
         icon: Smartphone,
-        description: 'Native and cross-platform mobile applications built for performance and user engagement.',
+        description: 'Android, iOS, and cross-platform mobile apps built around real business needs.',
     },
     {
-        id: 'social-media',
-        title: 'Social Media Marketing',
+        id: 'digital-marketing',
+        title: 'Digital Marketing',
         icon: Share2,
-        description: 'Strategic social media management and content creation to build your brand presence.',
+        description: 'SEO, content, and internet marketing support for businesses that want consistent growth.',
     },
     {
-        id: 'performance',
-        title: 'Performance Marketing',
+        id: 'ppc-agency',
+        title: 'PPC & Google Ads',
         icon: TrendingUp,
-        description: 'Data-driven advertising campaigns that deliver measurable ROI across multiple channels.',
+        description: 'Search-driven PPC campaigns built to capture demand and improve lead quality.',
     },
     {
         id: 'management-systems',
@@ -45,8 +45,7 @@ const Services = () => {
                         Our Services
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Comprehensive digital solutions tailored for the Dubai market,
-                        designed to accelerate your business growth.
+                        Website, app, and marketing services tailored for businesses in Kampala and across Uganda.
                     </p>
                 </div>
 

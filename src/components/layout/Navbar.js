@@ -3,10 +3,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { services } from '@/data/services';
-import { LanguageSwitcher, useLanguage } from '@/components/i18n/LanguageProvider';
 import { trackCTAClick } from '@/components/analytics/Analytics';
 
 const Navbar = () => {
@@ -14,8 +13,6 @@ const Navbar = () => {
     const [activeDropdown, setActiveDropdown] = useState(null);
     const pathname = usePathname();
     const dropdownRefs = useRef({});
-    const { t, isRTL } = useLanguage();
-
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -132,13 +129,14 @@ const Navbar = () => {
                                 )}
                             </div>
                         ))}
-                        <LanguageSwitcher className="mr-4" />
-                        <Button
-                            variant="primary"
-                            onClick={() => trackCTAClick('Book Strategy Call', 'navbar', '/contact')}
-                        >
-                            Book Strategy Call
-                        </Button>
+                        <Link href="/contact">
+                            <Button
+                                variant="primary"
+                                onClick={() => trackCTAClick('Book Strategy Call', 'navbar', '/contact')}
+                            >
+                                Book Strategy Call
+                            </Button>
+                        </Link>
                     </div>
 
                     {/* Mobile menu button */}
@@ -217,9 +215,11 @@ const Navbar = () => {
                             </div>
                         ))}
                         <div className="px-3 py-2">
-                            <Button variant="primary" className="w-full">
-                                Book Strategy Call
-                            </Button>
+                            <Link href="/contact">
+                                <Button variant="primary" className="w-full">
+                                    Book Strategy Call
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

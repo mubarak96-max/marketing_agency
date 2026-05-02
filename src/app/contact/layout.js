@@ -1,7 +1,7 @@
 export const metadata = {
     title: 'Contact Us - Nexus Digital | Get in Touch',
-    description: 'Contact Nexus Digital for your digital transformation needs. Based in Dubai, serving businesses across the UAE.',
-    keywords: 'contact digital agency Dubai, digital agency contact UAE',
+    description: 'Contact Nexus Digital for website development, app development, PPC, and digital marketing support in Uganda.',
+    keywords: 'contact web development company Uganda, contact digital marketing company Uganda',
 };
 
 export default function ContactLayout({ children }) {

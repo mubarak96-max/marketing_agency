@@ -1,65 +1,65 @@
 export const portfolioProjects = [
-    {
-        id: 'dubai-real-estate',
-        title: 'Dubai Property Portal',
-        industry: 'Real Estate',
-        image: '/images/portfolio/project-1.jpg',
-        description: 'A comprehensive property portal for one of Dubai\'s leading real estate developers',
-        services: ['Web Development', 'Mobile App', 'Digital Marketing'],
-        results: {
-            metric1: '300% Lead Increase',
-            metric2: 'AED 2M+ Sales',
-            metric3: '50K+ Monthly Visitors'
-        },
-        testimonial: {
-            text: 'The team delivered beyond our expectations. The platform has transformed our business.',
-            author: 'Mohammed Al Sayed',
-            position: 'CEO, Dubai Real Estate Co.'
-        },
-        challenge: 'Creating a seamless property search and booking experience',
-        solution: 'Custom property portal with virtual tours and instant booking',
-        technologies: ['Next.js', 'Node.js', 'MongoDB']
+  {
+    id: 'kampala-property-platform',
+    title: 'Kampala Property Marketplace',
+    industry: 'Real Estate',
+    image: '/images/portfolio/project-1.jpg',
+    description: 'A property discovery platform built to help a real estate brand generate more qualified inquiries from buyers and tenants in Kampala.',
+    services: ['Website Development', 'Landing Pages', 'PPC Campaigns'],
+    results: {
+      metric1: '214% Lead Increase',
+      metric2: 'UGX 480M+ Pipeline',
+      metric3: '38K Monthly Visitors',
     },
-    {
-        id: 'luxury-hotel',
-        title: 'Luxury Hotel Booking System',
-        industry: 'Hospitality',
-        image: '/images/portfolio/project-2.jpg',
-        description: 'Integrated booking and guest management system for a 5-star hotel',
-        services: ['Web Development', 'System Integration', 'UI/UX Design'],
-        results: {
-            metric1: '200% Booking Increase',
-            metric2: 'AED 5M+ Revenue',
-            metric3: '95% Customer Retention'
-        },
-        testimonial: {
-            text: 'The new system has streamlined our operations and improved guest satisfaction.',
-            author: 'Sarah Johnson',
-            position: 'General Manager, Luxury Hotel'
-        },
-        challenge: 'Modernizing the booking experience while maintaining luxury standards',
-        solution: 'Custom booking platform with integrated CRM and guest services',
-        technologies: ['React', 'Express.js', 'PostgreSQL']
+    testimonial: {
+      text: 'The new platform gave us a far better lead flow and finally made our digital marketing measurable.',
+      author: 'David K.',
+      position: 'Director, Kampala Property Group',
     },
-    {
-        id: 'beauty-clinic',
-        title: 'Premium Beauty Clinic Platform',
-        industry: 'Health & Beauty',
-        image: '/images/portfolio/project-3.jpg',
-        description: 'Digital transformation for a high-end beauty clinic chain',
-        services: ['Web Development', 'Mobile App', 'Marketing Automation'],
-        results: {
-            metric1: '150% Appointment Increase',
-            metric2: 'AED 1M+ Revenue Growth',
-            metric3: '40% Customer Return Rate'
-        },
-        testimonial: {
-            text: 'Our digital presence has been completely transformed. Outstanding results.',
-            author: 'Dr. Fatima Al Rashid',
-            position: 'Founder, Beauty & Care Clinic'
-        },
-        challenge: 'Creating a seamless booking and customer management system',
-        solution: 'Integrated platform for appointments, customer management, and marketing',
-        technologies: ['React Native', 'Node.js', 'MySQL']
-    }
+    challenge: 'Turning scattered listing inquiries into a structured lead-generation funnel.',
+    solution: 'A conversion-focused property site with landing pages, WhatsApp CTAs, and campaign tracking.',
+    technologies: ['Next.js', 'Node.js', 'MongoDB'],
+  },
+  {
+    id: 'uganda-safari-booking',
+    title: 'Uganda Safari Booking Platform',
+    industry: 'Tourism',
+    image: '/images/portfolio/project-2.jpg',
+    description: 'A lead-driven booking website for a tourism company selling custom safari and travel experiences.',
+    services: ['Website Development', 'Digital Marketing', 'SEO'],
+    results: {
+      metric1: '167% Booking Enquiries',
+      metric2: 'UGX 720M+ Revenue Influenced',
+      metric3: '4.6x ROAS',
+    },
+    testimonial: {
+      text: 'The website and campaigns gave us a stronger international presence and better-quality inquiries.',
+      author: 'Sarah N.',
+      position: 'Operations Lead, Pearl Trails Uganda',
+    },
+    challenge: 'Improving trust, itinerary visibility, and inquiry conversion for high-value travel leads.',
+    solution: 'A clearer content structure, stronger offer pages, and SEO plus PPC working together.',
+    technologies: ['React', 'WordPress', 'Google Ads'],
+  },
+  {
+    id: 'clinic-booking-system',
+    title: 'Multi-Branch Clinic Booking System',
+    industry: 'Healthcare',
+    image: '/images/portfolio/project-3.jpg',
+    description: 'A custom booking and patient inquiry system for a growing healthcare provider with multiple branches.',
+    services: ['Mobile App Development', 'Management Systems', 'UI/UX Design'],
+    results: {
+      metric1: '132% Appointment Growth',
+      metric2: 'UGX 310M+ Revenue Growth',
+      metric3: '41% Faster Response Time',
+    },
+    testimonial: {
+      text: 'We now manage bookings and branch visibility far more efficiently than before.',
+      author: 'Dr. Grace M.',
+      position: 'Founder, CityCare Clinics',
+    },
+    challenge: 'Reducing manual follow-up and improving patient booking visibility across branches.',
+    solution: 'A lightweight booking workflow with internal dashboards and mobile-friendly patient flows.',
+    technologies: ['React Native', 'Node.js', 'PostgreSQL'],
+  },
 ];

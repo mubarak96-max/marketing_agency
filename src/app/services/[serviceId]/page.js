@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${service.title} - Nexus Digital | Dubai's Premium Digital Agency`,
+    title: service.metaTitle || `${service.title} | Nexus Digital`,
     description: service.metaDescription || service.description,
     keywords: service.metaKeywords || service.title,
   };

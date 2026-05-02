@@ -1,7 +1,7 @@
 {
-    "name": "Nexus Digital - Dubai's Premier Digital Agency",
+    "name": "Nexus Digital - Website Development Company in Uganda",
     "short_name": "Nexus Digital",
-    "description": "Dubai's leading digital agency specializing in website development, app creation, and performance marketing.",
+    "description": "Uganda-focused digital agency specializing in website development, app creation, and digital marketing.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#1a1a2e",
@@ -121,7 +121,7 @@
     "related_applications": [
         {
             "platform": "webapp",
-            "url": "https://nexusdigital.ae/manifest.json"
+            "url": "https://nexusdigital.ug/manifest.json"
         }
     ],
     "prefer_related_applications": false,

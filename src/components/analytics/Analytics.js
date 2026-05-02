@@ -43,7 +43,7 @@ export const trackEvent = (eventName, properties = {}) => {
 };
 
 // Conversion tracking for specific actions
-export const trackConversion = (conversionType, value = 0, currency = 'AED') => {
+export const trackConversion = (conversionType, value = 0, currency = 'UGX') => {
     trackEvent('conversion', {
         conversion_type: conversionType,
         value: value,

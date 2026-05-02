@@ -203,11 +203,11 @@ const FreeTools = () => {
             <h3 className="text-xl font-bold text-dubai-dark mb-6">Social Media ROI Calculator</h3>
             <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                    <Input type="number" placeholder="Monthly Ad Spend (AED)" />
+                    <Input type="number" placeholder="Monthly Ad Spend (UGX)" />
                     <Input type="number" placeholder="Conversions per Month" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                    <Input type="number" placeholder="Average Order Value (AED)" />
+                    <Input type="number" placeholder="Average Order Value (UGX)" />
                     <Input type="number" placeholder="Conversion Rate (%)" />
                 </div>
                 <Button variant="primary" className="w-full">
@@ -283,29 +283,7 @@ const FreeTools = () => {
                     {renderToolContent()}
                 </div>
 
-                {/* Downloadable Resources */}
-                <Card className="p-8 bg-gradient-to-r from-dubai-light to-dubai-accent text-white">
-                    <div className="text-center">
-                        <Download className="w-12 h-12 text-dubai-gold mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold mb-4">
-                            Download Our Complete Digital Marketing Guide
-                        </h3>
-                        <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-                            Get our comprehensive guide to digital marketing in the UAE,
-                            including templates, checklists, and expert strategies.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-                            <Input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="bg-white/20 border-white/30 text-white placeholder-gray-300"
-                            />
-                            <Button variant="primary" className="bg-dubai-gold hover:bg-dubai-gold/90">
-                                Download Free
-                            </Button>
-                        </div>
-                    </div>
-                </Card>
+
             </div>
         </section>
     );

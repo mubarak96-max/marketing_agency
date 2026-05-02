@@ -5,22 +5,22 @@ import Card from '../ui/Card';
 const caseStudies = [
     {
         id: 1,
-        title: 'Dubai Real Estate Portal',
-        description: 'A complete digital transformation for a leading property developer',
+        title: 'Kampala Property Marketplace',
+        description: 'A lead-generation website and campaign setup for a growing real estate brand',
         metrics: {
             leads: '300% Lead Increase',
-            sales: 'AED 2M+ Sales',
-            visitors: '50K+ Monthly Visitors'
+            sales: 'UGX 480M+ Pipeline',
+            visitors: '38K+ Monthly Visitors'
         },
         image: '/images/case-study-1.jpg'
     },
     {
         id: 2,
-        title: 'Luxury Hotel Booking System',
-        description: 'Custom booking platform with revenue optimization',
+        title: 'Uganda Safari Booking Platform',
+        description: 'A conversion-focused booking site with SEO and campaign support',
         metrics: {
             bookings: '200% Booking Increase',
-            revenue: 'AED 5M+ Revenue',
+            revenue: 'UGX 720M+ Revenue Influenced',
             retention: '95% Customer Retention'
         },
         image: '/images/case-study-2.jpg'
@@ -36,7 +36,7 @@ const CaseStudies = () => {
                         Success Stories
                     </h2>
                     <p className="text-lg text-text-muted-light max-w-2xl mx-auto">
-                        Real results for real businesses in Dubai.
+                        Real results for real businesses in Uganda.
                         See how we've helped our clients achieve exceptional growth.
                     </p>
                 </div>

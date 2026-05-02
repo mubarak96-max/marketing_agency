@@ -5,6 +5,7 @@ import { X, Gift, Star, ArrowRight, Phone, Mail } from 'lucide-react';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import { trackEvent, trackConversion, useExitIntent } from '../analytics/Analytics';
+import { siteConfig } from '@/data/site';
 
 const ExitIntentPopup = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -48,7 +49,7 @@ const ExitIntentPopup = () => {
         {
             id: 'audit',
             title: 'Free Website Audit',
-            subtitle: 'Worth AED 500',
+            subtitle: 'Worth UGX 250,000',
             description: 'Get a comprehensive analysis of your website\'s performance, SEO, and conversion opportunities.',
             benefits: [
                 'Performance Analysis',
@@ -57,12 +58,12 @@ const ExitIntentPopup = () => {
                 'Competitor Analysis'
             ],
             cta: 'Get My Free Audit',
-            value: 500
+            value: 250000
         },
         {
             id: 'consultation',
             title: 'Strategy Consultation',
-            subtitle: 'Worth AED 750',
+            subtitle: 'Worth UGX 400,000',
             description: '30-minute one-on-one consultation with our digital strategy experts.',
             benefits: [
                 'Digital Strategy Review',
@@ -71,21 +72,21 @@ const ExitIntentPopup = () => {
                 'Action Plan'
             ],
             cta: 'Book Free Consultation',
-            value: 750
+            value: 400000
         },
         {
             id: 'guide',
             title: 'Digital Marketing Guide',
-            subtitle: 'Worth AED 300',
-            description: 'Complete guide to digital marketing in the UAE with templates and checklists.',
+            subtitle: 'Worth UGX 150,000',
+            description: 'Practical guide to digital marketing in Uganda with templates and checklists.',
             benefits: [
                 '50+ Page Guide',
                 'Marketing Templates',
-                'UAE Market Insights',
+                'Uganda Market Insights',
                 'Implementation Checklist'
             ],
             cta: 'Download Guide',
-            value: 300
+            value: 150000
         }
     ];
 
@@ -241,14 +242,14 @@ const ExitIntentPopup = () => {
                         </p>
                         <div className="flex justify-center space-x-6">
                             <a
-                                href="tel:+971XXXXXXXX"
+                                href={`tel:${siteConfig.phoneHref}`}
                                 className="flex items-center text-dubai-gold hover:text-dubai-dark transition-colors"
                             >
                                 <Phone className="w-4 h-4 mr-1" />
                                 <span className="text-sm">Call Us</span>
                             </a>
                             <a
-                                href="mailto:info@nexusdigital.ae"
+                                href={`mailto:${siteConfig.email}`}
                                 className="flex items-center text-dubai-gold hover:text-dubai-dark transition-colors"
                             >
                                 <Mail className="w-4 h-4 mr-1" />

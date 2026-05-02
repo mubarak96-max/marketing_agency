@@ -1,169 +1,266 @@
 export const services = [
-    {
-        id: 'web-development',
-        title: 'Website Development',
-        icon: 'Globe',
-        description: 'Custom websites that convert visitors into customers',
-        features: ['Responsive Design', 'SEO Optimized', 'Fast Loading'],
-        technologies: ['React', 'Next.js', 'WordPress'],
-        price: 'Starting from AED 5,000',
-        deliveryTime: '2-4 weeks',
-        details: {
-            overview: 'We create stunning, high-performance websites that deliver results.',
-            process: [
-                'Discovery & Planning',
-                'Design & Wireframing',
-                'Development & Testing',
-                'Launch & Support'
-            ],
-            includes: [
-                'Custom Design',
-                'Mobile Optimization',
-                'SEO Setup',
-                'Analytics Integration',
-                '1 Month Support'
-            ]
-        }
+  {
+    id: 'website-development',
+    title: 'Website Development',
+    icon: 'Globe',
+    description: 'Professional business websites, landing pages, and WordPress builds designed to help companies in Uganda generate more leads and sales.',
+    features: ['Responsive Design', 'SEO Setup', 'Fast Performance', 'CMS Training'],
+    technologies: ['Next.js', 'React', 'WordPress', 'Shopify'],
+    price: 'Starting from UGX 2,500,000',
+    deliveryTime: '2-6 weeks',
+    metaTitle: 'Website Development Company in Uganda | Nexus Digital',
+    metaDescription: 'Website development company in Uganda building high-converting business websites, WordPress websites, landing pages, and ecommerce stores.',
+    metaKeywords: 'website development Uganda, website development company Uganda, web development company Uganda, website developers Uganda, website designer Uganda, build website Uganda, wordpress website designer Uganda',
+    idealFor: ['Service businesses that need more leads', 'SMEs replacing outdated websites', 'Brands launching new products or offers'],
+    faqs: [
+      {
+        question: 'How much does website development cost in Uganda?',
+        answer: 'Most brochure and lead-generation websites start from UGX 2.5M, while larger ecommerce or custom builds require a higher scope-based quote.',
+      },
+      {
+        question: 'Do you build WordPress websites?',
+        answer: 'Yes. We build both WordPress websites and custom Next.js websites depending on the content, marketing, and performance requirements.',
+      },
+      {
+        question: 'Can you redesign an existing website?',
+        answer: 'Yes. We can audit, redesign, and rebuild an existing site while preserving key content and improving conversions, speed, and SEO.',
+      },
+    ],
+    details: {
+      overview: 'Our website development team builds conversion-focused websites for businesses in Kampala and across Uganda. Whether you need a company profile site, a lead-generation landing page, or a custom web platform, we combine design, messaging, and technical performance to turn your website into a revenue asset.',
+      process: [
+        'Discovery, offer positioning, and page planning',
+        'Wireframes, design direction, and content mapping',
+        'Development, QA, and technical SEO setup',
+        'Launch, analytics setup, and training',
+      ],
+      includes: [
+        'Custom design tailored to your brand',
+        'Mobile-responsive layouts',
+        'On-page SEO essentials',
+        'Lead forms and call tracking setup',
+        'Basic speed optimization',
+        'Post-launch support',
+      ],
     },
-    {
-        id: 'mobile-app',
-        title: 'Mobile App Development',
-        icon: 'Smartphone',
-        description: 'Native and cross-platform mobile applications',
-        features: ['iOS & Android', 'Cross-platform', 'API Integration'],
-        technologies: ['React Native', 'Flutter', 'Native iOS/Android'],
-        price: 'Starting from AED 15,000',
-        deliveryTime: '6-12 weeks',
-        details: {
-            overview: 'Mobile apps that engage users and drive business growth.',
-            process: [
-                'Requirements Analysis',
-                'UX/UI Design',
-                'Development',
-                'Testing & QA',
-                'App Store Launch'
-            ],
-            includes: [
-                'Custom Development',
-                'UI/UX Design',
-                'API Integration',
-                'App Store Submission',
-                '3 Months Support'
-            ]
-        }
+  },
+  {
+    id: 'mobile-app-development',
+    title: 'Mobile App Development',
+    icon: 'Smartphone',
+    description: 'Custom mobile app development for startups, service businesses, and established companies that need faster digital delivery.',
+    features: ['iOS & Android', 'Cross-platform Builds', 'API Integration', 'Admin Dashboards'],
+    technologies: ['React Native', 'Flutter', 'Node.js', 'Firebase'],
+    price: 'Starting from UGX 8,000,000',
+    deliveryTime: '6-14 weeks',
+    metaTitle: 'Mobile App Development Company in Uganda | Nexus Digital',
+    metaDescription: 'Mobile app development company in Uganda building Android, iOS, and cross-platform applications for startups and growing businesses.',
+    metaKeywords: 'mobile app development Uganda, mobile app development company Uganda, app development company Uganda, mobile application development Uganda, app development cost Uganda',
+    idealFor: ['Startups launching MVPs', 'Businesses digitizing customer journeys', 'Teams that need mobile ordering, booking, or field operations'],
+    faqs: [
+      {
+        question: 'What types of apps do you build?',
+        answer: 'We build booking apps, ecommerce apps, internal business tools, customer portals, and MVP products for both Android and iOS audiences.',
+      },
+      {
+        question: 'How much does app development cost in Uganda?',
+        answer: 'App development scope varies widely. Smaller MVPs start from UGX 8M, while more complex multi-role platforms require a custom estimate after discovery.',
+      },
+      {
+        question: 'Do you build for Android only?',
+        answer: 'We can build Android-only apps or cross-platform apps for both Android and iOS depending on your audience, budget, and launch priorities.',
+      },
+    ],
+    details: {
+      overview: 'We help companies in Uganda plan, design, and launch mobile applications that solve real business problems. From booking flows to ecommerce experiences and internal operations tools, our app development process focuses on usability, speed, and maintainability.',
+      process: [
+        'Requirements workshop and feature prioritization',
+        'UX flows, wireframes, and interface design',
+        'App development and backend integration',
+        'Testing, deployment, and support',
+      ],
+      includes: [
+        'Product scoping and roadmap',
+        'UX/UI design',
+        'API and payment integration',
+        'Admin dashboard or content controls',
+        'QA testing across devices',
+        'Launch support',
+      ],
     },
-    {
-        id: 'social-media',
-        title: 'Social Media Marketing',
-        icon: 'Share2',
-        description: 'Strategic social media management and content creation',
-        features: ['Content Creation', 'Community Management', 'Influencer Partnerships'],
-        platforms: ['Instagram', 'TikTok', 'LinkedIn', 'Twitter'],
-        technologies: ['Canva', 'Adobe Creative Suite', 'Hootsuite', 'Buffer', 'Meta Business Manager', 'Google Analytics'],
-        price: 'Starting from AED 3,000/month',
-        deliveryTime: 'Ongoing',
-        details: {
-            overview: 'Build your brand presence and engage your audience effectively with data-driven social media strategies.',
-            process: [
-                'Strategy Development',
-                'Content Planning',
-                'Post Creation & Scheduling',
-                'Community Management',
-                'Performance Analysis'
-            ],
-            includes: [
-                'Content Calendar',
-                'Post Creation',
-                'Community Management',
-                'Monthly Reports',
-                'Influencer Outreach'
-            ]
-        }
+  },
+  {
+    id: 'digital-marketing',
+    title: 'Digital Marketing',
+    icon: 'Share2',
+    description: 'Digital marketing strategy, content, SEO, and campaign support for companies that want consistent online growth in Uganda.',
+    features: ['SEO & Content', 'Campaign Strategy', 'Social Media Support', 'Monthly Reporting'],
+    platforms: ['Google Search', 'Instagram', 'Facebook', 'LinkedIn'],
+    technologies: ['Google Analytics', 'Search Console', 'Meta Business Suite', 'Looker Studio'],
+    price: 'Starting from UGX 1,800,000/month',
+    deliveryTime: 'Monthly retainer',
+    metaTitle: 'Digital Marketing Company in Uganda | Nexus Digital',
+    metaDescription: 'Digital marketing company in Uganda offering SEO, content strategy, social media marketing, and internet marketing support for growing brands.',
+    metaKeywords: 'digital marketing company Uganda, internet marketing Uganda, google digital marketing Uganda, digital marketing services Uganda',
+    idealFor: ['Businesses that need regular lead flow', 'Teams without an in-house marketing department', 'Brands expanding into new cities or customer segments'],
+    faqs: [
+      {
+        question: 'What does your digital marketing service include?',
+        answer: 'We combine strategy, content planning, on-page SEO, campaign coordination, and reporting so your digital channels work together instead of as isolated tactics.',
+      },
+      {
+        question: 'Do you provide internet marketing for local businesses in Uganda?',
+        answer: 'Yes. We work with local businesses, service providers, ecommerce brands, and B2B companies that want stronger visibility and better-quality leads.',
+      },
+      {
+        question: 'Is digital marketing different from PPC?',
+        answer: 'Yes. Digital marketing is broader and can include SEO, content, email, social, and paid ads. PPC is one specialized channel within that mix.',
+      },
+    ],
+    details: {
+      overview: 'As a digital marketing company in Uganda, we help businesses build sustainable online growth through stronger messaging, smarter channel choices, and better conversion tracking. This is a practical service for teams that need strategy and execution, not vanity metrics.',
+      process: [
+        'Channel audit and growth opportunity review',
+        'Messaging, audience, and offer alignment',
+        'Content, SEO, and campaign rollout',
+        'Monthly optimization and reporting',
+      ],
+      includes: [
+        'Marketing audit',
+        'Content and SEO recommendations',
+        'Campaign planning',
+        'Monthly performance reporting',
+        'Landing page improvement guidance',
+        'Ongoing optimization support',
+      ],
     },
-    {
-        id: 'performance-marketing',
-        title: 'Performance Marketing',
-        icon: 'TrendingUp',
-        description: 'Data-driven advertising campaigns for maximum ROI',
-        features: ['Lead Generation', 'E-commerce Sales', 'Brand Awareness'],
-        platforms: ['Google Ads', 'Meta Ads', 'TikTok Ads'],
-        price: '15% of ad spend',
-        deliveryTime: 'Ongoing',
-        details: {
-            overview: 'Results-focused digital advertising that drives real business growth.',
-            process: [
-                'Account Setup',
-                'Campaign Strategy',
-                'Creative Development',
-                'Campaign Management',
-                'Optimization & Reporting'
-            ],
-            includes: [
-                'Campaign Setup',
-                'Ad Creation',
-                'Audience Targeting',
-                'Weekly Optimization',
-                'Monthly Reports'
-            ]
-        }
+  },
+  {
+    id: 'ppc-agency',
+    title: 'PPC & Google Ads Management',
+    icon: 'TrendingUp',
+    description: 'A PPC agency service for businesses that need lead generation through Google Ads, remarketing, and high-intent search campaigns.',
+    features: ['Google Ads', 'Keyword Research', 'Landing Page Alignment', 'ROAS Reporting'],
+    platforms: ['Google Search Ads', 'Display Remarketing', 'YouTube Ads', 'Performance Max'],
+    price: 'Starting from UGX 1,500,000/month + ad spend',
+    deliveryTime: 'Monthly retainer',
+    metaTitle: 'PPC Agency in Uganda | Google Ads Management | Nexus Digital',
+    metaDescription: 'PPC agency in Uganda managing Google Ads campaigns, keyword targeting, landing page strategy, and reporting for businesses that need qualified leads.',
+    metaKeywords: 'ppc agency Uganda, google ads agency Uganda, google digital marketing Uganda, paid search agency Uganda',
+    idealFor: ['Companies that need inbound leads fast', 'Teams launching new offers', 'Businesses ready to scale with Google search demand'],
+    faqs: [
+      {
+        question: 'Do you manage Google Ads for Uganda-based businesses?',
+        answer: 'Yes. We manage Google Ads campaigns for businesses targeting customers in Kampala, across Uganda, and in selected regional markets.',
+      },
+      {
+        question: 'What makes a good PPC campaign?',
+        answer: 'Clear commercial keywords, strong landing pages, conversion tracking, tight ad groups, and consistent optimization are the core drivers of PPC performance.',
+      },
+      {
+        question: 'Can you improve an existing Google Ads account?',
+        answer: 'Yes. We frequently start with account audits, restructure campaigns, improve search terms, and fix tracking before scaling spend.',
+      },
+    ],
+    details: {
+      overview: 'Our PPC agency service is built for businesses that want faster demand capture. We plan and manage Google Ads campaigns around commercial intent, landing page quality, and measurable return so you know what is driving leads and revenue.',
+      process: [
+        'Account audit or setup',
+        'Keyword research and campaign structure',
+        'Ad copy, extensions, and landing page alignment',
+        'Weekly optimization and reporting',
+      ],
+      includes: [
+        'Google Ads strategy',
+        'Keyword and competitor research',
+        'Conversion tracking setup',
+        'Ad creation and testing',
+        'Weekly optimization',
+        'Monthly reporting calls',
+      ],
     },
-    {
-        id: 'management-systems',
-        title: 'Management Systems',
-        icon: 'Database',
-        description: 'Custom CRM, ERP & dashboard solutions',
-        features: ['CRM', 'ERP', 'Custom Dashboards'],
-        technologies: ['Node.js', 'React', 'MongoDB'],
-        price: 'Starting from AED 8,000',
-        deliveryTime: '4-8 weeks',
-        details: {
-            overview: 'Streamline your operations with custom management systems.',
-            process: [
-                'Requirements Gathering',
-                'System Design',
-                'Development',
-                'Testing',
-                'Training & Support'
-            ],
-            includes: [
-                'Custom Development',
-                'Data Migration',
-                'User Training',
-                'Documentation',
-                '3 Months Support'
-            ]
-        }
+  },
+  {
+    id: 'management-systems',
+    title: 'Management Systems',
+    icon: 'Database',
+    description: 'Custom CRM, dashboard, booking, and internal workflow systems that reduce manual work and improve visibility across your business.',
+    features: ['CRM Systems', 'ERP Workflows', 'Dashboards', 'Automation'],
+    technologies: ['Node.js', 'React', 'MongoDB', 'PostgreSQL'],
+    price: 'Starting from UGX 6,000,000',
+    deliveryTime: '4-10 weeks',
+    metaTitle: 'Custom Business Systems in Uganda | Nexus Digital',
+    metaDescription: 'Custom CRM, ERP, and dashboard development in Uganda for businesses that need better reporting, workflow automation, and operations visibility.',
+    metaKeywords: 'custom crm Uganda, dashboard development Uganda, business systems Uganda, erp development Uganda',
+    idealFor: ['Teams still running operations in spreadsheets', 'Businesses that need booking or field reporting systems', 'Operations teams needing better dashboards'],
+    faqs: [
+      {
+        question: 'Can you replace spreadsheet-based workflows?',
+        answer: 'Yes. Many of our system builds start by turning manual spreadsheet processes into structured dashboards, workflows, and approval systems.',
+      },
+      {
+        question: 'Do you integrate with existing tools?',
+        answer: 'Yes. We can integrate with accounting tools, messaging workflows, payment providers, and internal APIs where needed.',
+      },
+    ],
+    details: {
+      overview: 'We build custom internal systems for businesses that need more control over leads, operations, field activity, inventory, or reporting. The goal is to reduce operational drag and give your team one reliable system of record.',
+      process: [
+        'Process mapping and requirements gathering',
+        'System architecture and workflow design',
+        'Development, testing, and user training',
+        'Deployment and support',
+      ],
+      includes: [
+        'Workflow mapping',
+        'Role-based access',
+        'Reporting dashboards',
+        'Automation opportunities',
+        'Documentation and training',
+        'Post-launch support',
+      ],
     },
-    {
-        id: 'ecommerce-setup',
-        title: 'E-commerce Setup',
-        icon: 'ShoppingCart',
-        description: 'Complete e-commerce solutions from setup to optimization',
-        features: ['Online Store Setup', 'Payment Integration', 'Inventory Management'],
-        technologies: ['Shopify', 'WooCommerce', 'Magento', 'Stripe', 'PayPal', 'Aramex', 'Talabat'],
-        platforms: ['Shopify', 'WooCommerce', 'Custom Solutions'],
-        price: 'Starting from AED 6,000',
-        deliveryTime: '3-6 weeks',
-        details: {
-            overview: 'Launch your online business with a professional e-commerce platform tailored for the UAE market.',
-            process: [
-                'Business Analysis',
-                'Platform Selection',
-                'Store Setup & Design',
-                'Payment & Shipping Integration',
-                'Testing & Launch',
-                'Training & Support'
-            ],
-            includes: [
-                'Complete Store Setup',
-                'Mobile-Responsive Design',
-                'Payment Gateway Integration',
-                'Shipping Setup',
-                'Product Upload (up to 50 items)',
-                'SEO Optimization',
-                'Analytics Setup',
-                '2 Months Support'
-            ]
-        }
-    }
+  },
+  {
+    id: 'ecommerce-website-development',
+    title: 'Ecommerce Website Development',
+    icon: 'ShoppingCart',
+    description: 'Online stores for businesses that want to sell products, collect payments, and manage orders more efficiently in Uganda.',
+    features: ['Store Setup', 'Payment Integration', 'Inventory Management', 'Order Tracking'],
+    technologies: ['Shopify', 'WooCommerce', 'Flutterwave', 'MTN MoMo', 'Airtel Money'],
+    platforms: ['Shopify', 'WooCommerce', 'Custom Ecommerce'],
+    price: 'Starting from UGX 4,500,000',
+    deliveryTime: '3-8 weeks',
+    metaTitle: 'Ecommerce Website Development in Uganda | Nexus Digital',
+    metaDescription: 'Ecommerce website development in Uganda with Shopify, WooCommerce, payment gateway integration, and conversion-focused online store setup.',
+    metaKeywords: 'ecommerce website development Uganda, online store development Uganda, shopify developer Uganda, woocommerce developer Uganda',
+    idealFor: ['Retail brands launching online stores', 'Distributors digitizing ordering', 'Businesses that need delivery and payment integration'],
+    faqs: [
+      {
+        question: 'Can you integrate mobile money payments?',
+        answer: 'Yes. We can structure payment workflows around providers and methods appropriate for the Ugandan market, including mobile money-friendly checkout options.',
+      },
+      {
+        question: 'Do you build on Shopify or WooCommerce?',
+        answer: 'Yes. We recommend the platform based on catalog size, content needs, budget, and your internal team’s ability to manage products and orders.',
+      },
+    ],
+    details: {
+      overview: 'Our ecommerce builds focus on product discovery, trust, checkout completion, and store management. We help businesses in Uganda launch online stores that are easy to update and ready for local payment and fulfillment workflows.',
+      process: [
+        'Catalog and store planning',
+        'Platform selection and design',
+        'Payment, shipping, and product setup',
+        'Testing, launch, and training',
+      ],
+      includes: [
+        'Store setup and design',
+        'Product category structure',
+        'Payment gateway setup',
+        'Mobile-responsive checkout',
+        'Analytics and conversion tracking',
+        'Training for your team',
+      ],
+    },
+  },
 ];
