@@ -16,10 +16,10 @@ const firebaseConfig = {
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app);
 
-// Use initializeFirestore instead of getFirestore to enable long-polling
-// This is much more stable on weak internet connections
+// Use initializeFirestore instead of getFirestore to force long-polling
+// This is essential for restricted or unstable networks where gRPC streams are blocked
 const db = initializeFirestore(app, {
-  experimentalAutoDetectLongPolling: true,
+  forceLongPolling: true,
   localCache: memoryLocalCache(),
 });
 
