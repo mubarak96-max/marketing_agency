@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getPublishedPosts } from '@/lib/blog';
+import { getPublishedPostsPublic } from '@/lib/publicBlog';
 
 export const metadata = {
   title: 'Digital Growth Blog | MM Tech Spot Uganda',
@@ -8,7 +8,7 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
-  const posts = await getPublishedPosts();
+  const posts = await getPublishedPostsPublic();
 
   return (
     <div className="min-h-screen bg-white">

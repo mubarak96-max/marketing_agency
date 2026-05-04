@@ -1,4 +1,4 @@
-import { getPostBySlug } from '@/lib/blog';
+import { getPublishedPostBySlugPublic } from '@/lib/publicBlog';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
@@ -31,7 +31,7 @@ function renderContent(post) {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPublishedPostBySlugPublic(slug);
 
   if (!post) return {};
 
@@ -57,9 +57,9 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const post = await getPublishedPostBySlugPublic(slug);
 
-  if (!post || !post.published) {
+  if (!post) {
     notFound();
   }
 

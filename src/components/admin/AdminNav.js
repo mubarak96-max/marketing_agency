@@ -18,7 +18,7 @@ export default function AdminNav() {
   const { logout } = useAuth();
 
   async function handleLogout() {
-    logout();
+    await logout();
     router.replace('/admin/login');
   }
 

@@ -53,7 +53,7 @@ export default function EditPostPage({ params }) {
       await updatePost(id, data);
       showToast('Post updated successfully!');
     } catch (e) {
-      setError('Failed to update post. Please try again.');
+      setError(e?.message || 'Failed to update post. Please try again.');
       console.error(e);
     } finally {
       setIsSaving(false);
@@ -62,8 +62,13 @@ export default function EditPostPage({ params }) {
 
   async function handleDelete() {
     if (!confirm(`Delete "${post.title}"? This cannot be undone.`)) return;
-    await deletePost(post.id);
-    router.push('/admin/blog');
+    try {
+      await deletePost(post.id);
+      router.push('/admin/blog');
+    } catch (e) {
+      setError(e?.message || 'Failed to delete post. Please try again.');
+      console.error(e);
+    }
   }
 
   const postId = typeof params.id === 'string' ? params.id : '…';

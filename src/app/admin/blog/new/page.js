@@ -20,7 +20,7 @@ export default function NewPostPage() {
       const id = await createPost(data);
       router.push(`/admin/blog/${id}/edit?saved=1`);
     } catch (e) {
-      setError('Failed to save post. Please try again.');
+      setError(e?.message || 'Failed to save post. Please try again.');
       console.error(e);
     } finally {
       setIsSaving(false);

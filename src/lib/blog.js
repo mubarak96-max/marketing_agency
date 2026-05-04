@@ -30,9 +30,17 @@ export async function getPublishedPosts() {
 /** Get all posts (for admin) */
 export async function getAllPosts() {
   try {
-    const q = query(collection(db, COLLECTION), orderBy('createdAt', 'desc'));
-    const snap = await getDocs(q);
-    return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+    const res = await fetch('/api/admin/blog', {
+      method: 'GET',
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error || 'Failed to fetch posts');
+    }
+
+    return res.json();
   } catch (e) {
     console.error('Error fetching all posts:', e);
     return [];
@@ -56,50 +64,56 @@ export async function getPostBySlug(slug) {
 /** Get a single post by Firestore ID (for admin editor) */
 export async function getPostById(id) {
   try {
-    const ref = doc(db, COLLECTION, id);
-    const snap = await getDoc(ref);
-    if (!snap.exists()) return null;
-    return { id: snap.id, ...snap.data() };
+    const res = await fetch(`/api/admin/blog?id=${id}`, {
+      method: 'GET',
+      cache: 'no-store',
+    });
+
+    if (res.status === 404) return null;
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error || 'Failed to fetch post');
+    }
+
+    return res.json();
   } catch (e) {
     console.error('Error fetching post by id:', e);
     return null;
   }
 }
 
-// Helper for API calls
-async function apiCall(method, body = null, id = null) {
-  const token = sessionStorage.getItem('adminToken');
+async function adminApiCall(method, body = null, id = null) {
   const url = id ? `/api/admin/blog?id=${id}` : '/api/admin/blog';
-  
+
   const res = await fetch(url, {
     method,
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
     },
-    body: body ? JSON.stringify(body) : null
+    body: body ? JSON.stringify(body) : null,
   });
 
   if (!res.ok) {
     const err = await res.json();
-    throw new Error(err.error || 'API request failed');
+    throw new Error(err.error || 'Admin API request failed');
   }
 
   return res.json();
 }
 
-/** Create a new post via API */
+/** Create a new post through the protected admin API. */
 export async function createPost(data) {
-  const res = await apiCall('POST', data);
+  const res = await adminApiCall('POST', data);
   return res.id;
 }
 
-/** Update an existing post via API */
+/** Update an existing post through the protected admin API. */
 export async function updatePost(id, data) {
-  await apiCall('POST', { ...data, id });
+  await adminApiCall('POST', { ...data, id });
 }
 
-/** Delete a post via API */
+/** Delete a post through the protected admin API. */
 export async function deletePost(id) {
-  await apiCall('DELETE', null, id);
+  await adminApiCall('DELETE', null, id);
 }
