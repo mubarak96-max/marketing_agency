@@ -361,7 +361,22 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
               />
             </div>
           </div>
-
+          {/* Cover Image */}
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
+            <h3 className="text-sm font-semibold text-slate-200">Cover Image</h3>
+            <input
+              type="url"
+              value={coverImage}
+              onChange={(e) => setCoverImage(e.target.value)}
+              placeholder="https://…"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+            />
+            {coverImage && (
+              <img
+                src={coverImage}
+                alt="Cover preview"
+                className="w-full aspect-video object-cover rounded-lg mt-2"
+              />
             )}
           </div>
 
