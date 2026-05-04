@@ -112,6 +112,7 @@ function slugify(str) {
 // ---------- Main BlogEditor ----------
 export default function BlogEditor({ post = null, onSave, isSaving }) {
   const editorRef = useRef(null);
+  const titleRef = useRef(null);
   const [mode, setMode] = useState('visual'); // 'visual' | 'markdown'
   const [postTitle, setPostTitle] = useState(post?.title || '');
   const [slug, setSlug] = useState(post?.slug || '');
@@ -154,9 +155,17 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
   }, [mode, mdContent]);
 
   function handleSave(publishStatus) {
+    // Direct DOM read to be 100% sure we have the latest value
+    const finalTitle = titleRef.current?.value || postTitle;
+    
+    if (!finalTitle.trim()) {
+      alert('Please enter a post title at the top of the page.');
+      return;
+    }
+
     const content = getContent();
     onSave({
-      title: postTitle,
+      title: finalTitle,
       slug,
       excerpt,
       category,
@@ -210,6 +219,7 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
           {/* Title */}
           <input
             type="text"
+            ref={titleRef}
             id="post-title-input"
             placeholder="Post title"
             value={postTitle}
