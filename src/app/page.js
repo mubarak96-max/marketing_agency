@@ -3,7 +3,6 @@ import EnhancedServices from '@/components/sections/EnhancedServices';
 import SocialProof from '@/components/sections/SocialProof';
 import CaseStudies from '@/components/sections/CaseStudies';
 import FreeTools from '@/components/sections/FreeTools';
-import ReferralProgram from '@/components/sections/ReferralProgram';
 import { MessageCircle } from 'lucide-react';
 import { siteConfig, whatsappUrl } from '@/data/site';
 
@@ -25,7 +24,6 @@ export default function Home() {
       <EnhancedServices />
       <CaseStudies />
       <FreeTools />
-      <ReferralProgram />
 
       {/* WhatsApp floating button */}
       <a

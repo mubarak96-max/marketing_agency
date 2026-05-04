@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Offline - Nexus Digital',
+    title: 'Offline - MM Tech Spot',
     description: 'You are currently offline',
 };
 

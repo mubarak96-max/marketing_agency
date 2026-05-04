@@ -1,7 +1,7 @@
 export const metadata = {
-  title: 'About Nexus Digital | Web Development & Marketing Agency Uganda',
-  description: 'Learn about Nexus Digital, a Uganda-focused website development, app development, and digital marketing agency serving businesses in Kampala and beyond.',
-  keywords: 'about Nexus Digital, web development company Uganda, digital marketing agency Uganda',
+  title: 'About MM Tech Spot | Web Development & Marketing Agency Uganda',
+  description: 'Learn about MM Tech Spot, a Uganda-focused website development, app development, and digital marketing agency serving businesses in Kampala and beyond.',
+  keywords: 'about MM Tech Spot, web development company Uganda, digital marketing agency Uganda',
 };
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
       <section className="relative py-20 bg-dubai-dark text-luxury-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">About Nexus Digital</h1>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">About MM Tech Spot</h1>
             <p className="text-xl md:text-2xl text-luxury-white/90 mb-8 max-w-3xl mx-auto">
               A Uganda-focused digital agency helping businesses grow through better websites, mobile apps, and measurable marketing systems.
             </p>
@@ -23,7 +23,7 @@ export default function About() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-dubai-dark mb-6">Our Story</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Nexus Digital exists to help businesses in Kampala and across Uganda compete more effectively online. We build digital assets that support real commercial outcomes, not just attractive visuals. That means better websites, clearer offers, stronger campaigns, and systems that help teams move faster.
+              MM Tech Spot exists to help businesses in Kampala and across Uganda compete more effectively online. We build digital assets that support real commercial outcomes, not just attractive visuals. That means better websites, clearer offers, stronger campaigns, and systems that help teams move faster.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export default function About() {
               </p>
             </div>
             <div className="bg-dubai-dark rounded-lg p-8 text-luxury-white">
-              <h3 className="text-2xl font-bold mb-6">Why Choose Nexus Digital?</h3>
+              <h3 className="text-2xl font-bold mb-6">Why Choose MM Tech Spot?</h3>
               <ul className="space-y-3">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-dubai-gold rounded-full mr-3"></span>

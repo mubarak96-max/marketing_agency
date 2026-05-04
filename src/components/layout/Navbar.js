@@ -6,13 +6,16 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { services } from '@/data/services';
+import { siteConfig } from '@/data/site';
 import { trackCTAClick } from '@/components/analytics/Analytics';
+import Image from 'next/image';
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const pathname = usePathname();
     const dropdownRefs = useRef({});
+
     // Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -62,8 +65,15 @@ const Navbar = () => {
                 <div className="flex justify-between h-16">
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-2xl font-bold text-text-on-light">
-                            Nexus Digital
+                        <Link href="/" className="flex items-center">
+                            <Image
+                                src={siteConfig.logo}
+                                alt={siteConfig.brandName}
+                                width={220}
+                                height={60}
+                                className="h-12 w-auto"
+                                priority
+                            />
                         </Link>
                     </div>
 

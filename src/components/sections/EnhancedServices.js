@@ -72,7 +72,7 @@ const EnhancedServices = () => {
     <section className="py-20 bg-section-medium">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-text-on-dark mb-4">Our Premium Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-on-dark mb-4">Our Services</h2>
           <p className="text-lg text-text-muted-dark max-w-2xl mx-auto">
             Website development, app development, internet marketing, and PPC services designed for business growth in Uganda.
           </p>

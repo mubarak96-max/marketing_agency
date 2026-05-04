@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${post.title} | Nexus Digital`,
+    title: `${post.title} | MM Tech Spot`,
     description: post.description,
     keywords: post.keywords,
   };

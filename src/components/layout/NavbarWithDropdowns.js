@@ -64,7 +64,7 @@ const NavbarWithDropdowns = () => {
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="text-2xl font-bold text-dubai-dark">
-                            Nexus Digital
+                            MM Tech Spot
                         </Link>
                     </div>
 

@@ -1,10 +1,10 @@
 export const siteConfig = {
-  brandName: 'Nexus Digital',
-  domain: 'https://nexusdigital.ug',
-  email: 'hello@nexusdigital.ug',
-  phoneDisplay: '+256 700 000000',
-  phoneHref: '+256700000000',
-  whatsappNumber: '256700000000',
+  brandName: 'MM Tech Spot',
+  domain: 'https://mmtechspot.com',
+  email: 'mmtechspot@gmail.com',
+  phoneDisplay: '+256 759 984846',
+  phoneHref: '+256759984846',
+  whatsappNumber: '256759984846',
   city: 'Kampala',
   country: 'Uganda',
   streetAddress: 'Plot 12 Yusuf Lule Road',
@@ -16,6 +16,7 @@ export const siteConfig = {
   ],
   serviceAreas: ['Kampala', 'Entebbe', 'Jinja', 'Mbarara', 'Uganda'],
   currency: 'UGX',
+  logo: '/logo.svg?v=2',
 };
 
 export const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}`;

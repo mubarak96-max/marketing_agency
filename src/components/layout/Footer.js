@@ -13,6 +13,7 @@ import {
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import { siteConfig, whatsappUrl } from '@/data/site';
+import Image from 'next/image';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -24,6 +25,17 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div>
+            <div className="mb-6">
+              <Link href="/" className="inline-block">
+                <Image
+                  src={siteConfig.logo}
+                  alt={siteConfig.brandName}
+                  width={180}
+                  height={45}
+                  className="h-12 w-auto brightness-0 invert"
+                />
+              </Link>
+            </div>
             <h3 className="text-xl font-bold mb-4 text-brand-accent">About {siteConfig.brandName}</h3>
             <p className="text-text-muted-dark mb-4">
               {siteConfig.brandName} is a Uganda-focused digital agency offering website development, mobile app development, PPC, and digital marketing services.

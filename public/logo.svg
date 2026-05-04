@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <text
+    x="50%"
+    y="50%"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Product Sans, Google Sans, Poppins, Arial, sans-serif"
+    font-size="110"
+    font-weight="700">
+    <tspan fill="#2563EB">M</tspan><tspan fill="#0F172A">M</tspan><tspan> </tspan><tspan fill="#0F172A">Tech</tspan><tspan> </tspan><tspan fill="#0F172A">S</tspan><tspan fill="#2563EB">pot</tspan>
+  </text>
+</svg>

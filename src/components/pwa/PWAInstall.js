@@ -74,7 +74,7 @@ const PWAInstallBanner = () => {
 
                 <div className="ml-3 flex-1">
                     <h3 className="text-sm font-semibold text-dubai-dark">
-                        Install Nexus Digital App
+                        Install MM Tech Spot App
                     </h3>
                     <p className="text-xs text-gray-600 mt-1">
                         Get faster access and offline browsing. Install our app for the best experience.
@@ -122,7 +122,7 @@ const IOSInstallInstructions = ({ isVisible, onClose }) => {
                 </div>
 
                 <h3 className="text-lg font-bold text-dubai-dark mb-4">
-                    Install Nexus Digital
+                    Install MM Tech Spot
                 </h3>
 
                 <div className="text-left space-y-3 mb-6">

@@ -5,7 +5,7 @@ import React, { createContext, useContext } from 'react';
 const LanguageContext = createContext({
   language: 'en',
   isRTL: false,
-  switchLanguage: () => {},
+  switchLanguage: () => { },
   t: (key) => key,
 });
 
@@ -32,8 +32,8 @@ const translations = {
     projectsCompleted: 'Projects Completed',
     clientSatisfaction: 'Client Satisfaction',
     recentWins: 'Recent Wins',
-    aboutCompany: 'About Nexus Digital',
-    aboutText: 'Nexus Digital is a Uganda-focused digital agency specializing in website development, digital marketing, and custom business systems.',
+    aboutCompany: 'About MM Tech Spot',
+    aboutText: 'MM Tech Spot is a Uganda-focused digital agency specializing in website development, digital marketing, and custom business systems.',
     newsletter: 'Newsletter',
     newsletterText: 'Subscribe for practical insights on websites, PPC, and digital growth in Uganda.',
     subscribeButton: 'Subscribe',
@@ -52,7 +52,7 @@ export const LanguageProvider = ({ children }) => {
   const value = {
     language: 'en',
     isRTL: false,
-    switchLanguage: () => {},
+    switchLanguage: () => { },
     t: (key) => translations.en[key] || key,
   };
 

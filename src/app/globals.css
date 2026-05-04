@@ -198,13 +198,13 @@
   }
 }
 
-/* Dubai-themed gradient backgrounds */
+/* Dubai-themed gradient backgrounds - Updated to Blue/Dark Theme */
 .bg-dubai-gradient {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #d4af37 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #2563EB 100%);
 }
 
 .bg-dubai-sunset {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 50%, #d4af37 100%);
+  background: linear-gradient(135deg, #2563EB 0%, #3B82F6 50%, #93C5FD 100%);
 }
 
 /* Parallax scrolling */
@@ -225,7 +225,7 @@
 
 /* Loading states */
 .skeleton {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
   background-size: 200% 100%;
   animation: loading 1.5s infinite;
 }
@@ -254,14 +254,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #dbddde;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1ba9ba;
+  background: #2563EB;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c5cd7f;
+  background: #3B82F6;
 }

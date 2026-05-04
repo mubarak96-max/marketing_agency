@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { blogPosts } from '@/data/blogPosts';
 
 export const metadata = {
-  title: 'Digital Marketing & Web Development Blog Uganda | Nexus Digital',
+  title: 'Digital Marketing & Web Development Blog Uganda | MM Tech Spot',
   description: 'Guides on website development, app development cost, Google Ads, and digital marketing for businesses in Uganda.',
   keywords: 'website development Uganda blog, app development cost Uganda, google ads Uganda, website builders small business Uganda',
 };

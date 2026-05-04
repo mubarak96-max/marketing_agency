@@ -1,7 +1,7 @@
 export const locationPages = {
   'kampala-website-development': {
     title: 'Website Development in Kampala',
-    metaTitle: 'Website Development in Kampala, Uganda | Nexus Digital',
+    metaTitle: 'Website Development in Kampala, Uganda | MM Tech Spot',
     description: 'Website development services in Kampala for businesses that need stronger websites, landing pages, and lead generation systems.',
     heroText: 'Website development in Kampala for businesses that need a professional online presence, stronger conversion rates, and cleaner digital positioning.',
     benefits: [
@@ -28,7 +28,7 @@ export const locationPages = {
   },
   'kampala-mobile-app-development': {
     title: 'Mobile App Development in Kampala',
-    metaTitle: 'Mobile App Development in Kampala, Uganda | Nexus Digital',
+    metaTitle: 'Mobile App Development in Kampala, Uganda | MM Tech Spot',
     description: 'Mobile app development services in Kampala for startups and businesses launching Android, iOS, or cross-platform applications.',
     heroText: 'Mobile app development in Kampala for startups, service businesses, and operations teams that need practical digital tools.',
     benefits: [
@@ -55,7 +55,7 @@ export const locationPages = {
   },
   'kampala-digital-marketing': {
     title: 'Digital Marketing in Kampala',
-    metaTitle: 'Digital Marketing Company in Kampala, Uganda | Nexus Digital',
+    metaTitle: 'Digital Marketing Company in Kampala, Uganda | MM Tech Spot',
     description: 'Digital marketing services in Kampala including SEO, campaign planning, content strategy, and conversion-focused growth support.',
     heroText: 'Digital marketing in Kampala for businesses that need consistent visibility, better lead quality, and practical reporting.',
     benefits: [

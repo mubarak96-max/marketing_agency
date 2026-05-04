@@ -1,11 +1,11 @@
 {
-    "name": "Nexus Digital - Website Development Company in Uganda",
-    "short_name": "Nexus Digital",
+    "name": "MM Tech Spot - Website Development Company in Uganda",
+    "short_name": "MM Tech Spot",
     "description": "Uganda-focused digital agency specializing in website development, app creation, and digital marketing.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#1a1a2e",
-    "theme_color": "#d4af37",
+    "background_color": "#0F172A",
+    "theme_color": "#2563EB",
     "orientation": "portrait-primary",
     "categories": [
         "business",
@@ -70,14 +70,14 @@
             "sizes": "1280x720",
             "type": "image/png",
             "form_factor": "wide",
-            "label": "Nexus Digital Desktop View"
+            "label": "MM Tech Spot Desktop View"
         },
         {
             "src": "/screenshots/mobile.png",
             "sizes": "375x667",
             "type": "image/png",
             "form_factor": "narrow",
-            "label": "Nexus Digital Mobile View"
+            "label": "MM Tech Spot Mobile View"
         }
     ],
     "shortcuts": [
@@ -121,7 +121,7 @@
     "related_applications": [
         {
             "platform": "webapp",
-            "url": "https://nexusdigital.ug/manifest.json"
+            "url": "https://mmtechspot.com/manifest.json"
         }
     ],
     "prefer_related_applications": false,

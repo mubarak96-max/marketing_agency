@@ -10,14 +10,14 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   metadataBase: new URL(siteConfig.domain),
-  title: 'Website Development Company in Uganda | Nexus Digital',
-  description: 'Nexus Digital is a Uganda web development, mobile app development, and digital marketing company helping businesses in Kampala and across Uganda grow online.',
+  title: 'Website Development Company in Uganda | MM Tech Spot',
+  description: 'MM Tech Spot is a Uganda web development, mobile app development, and digital marketing company helping businesses in Kampala and across Uganda grow online.',
   keywords: 'website development company Uganda, web development company Uganda, mobile app development company Uganda, digital marketing company Uganda, website developers Uganda',
   manifest: '/manifest.json',
   robots: 'index, follow',
   authors: [{ name: siteConfig.brandName }],
   openGraph: {
-    title: 'Website Development Company in Uganda | Nexus Digital',
+    title: 'Website Development Company in Uganda | MM Tech Spot',
     description: 'Website development, mobile app development, PPC, and digital marketing services for businesses in Kampala and across Uganda.',
     images: ['/images/og-image.jpg'],
     locale: 'en_UG',
@@ -25,12 +25,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website Development Company in Uganda | Nexus Digital',
+    title: 'Website Development Company in Uganda | MM Tech Spot',
     description: 'Website development, app development, and digital marketing in Uganda.',
     images: ['/images/twitter-card.jpg'],
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.svg?v=2',
     apple: '/icons/icon-192x192.png',
     shortcut: '/icons/icon-192x192.png',
   }
@@ -40,7 +40,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#1ba9ba',
+  themeColor: '#2563EB',
 };
 
 export default function RootLayout({ children }) {
