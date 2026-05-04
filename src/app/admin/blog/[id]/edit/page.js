@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, use } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import AdminNav from '@/components/admin/AdminNav';
 import BlogEditor from '@/components/admin/BlogEditor';
@@ -7,6 +7,7 @@ import { getPostById, updatePost, deletePost } from '@/lib/blog';
 import Link from 'next/link';
 
 export default function EditPostPage({ params }) {
+  const { id: postId } = use(params);
   const router = useRouter();
   const searchParams = useSearchParams();
   const [post, setPost] = useState(null);
@@ -16,10 +17,8 @@ export default function EditPostPage({ params }) {
   const [toast, setToast] = useState('');
 
   useEffect(() => {
-    params.then?.((p) => loadPost(p.id)).catch(() => loadPost(params.id));
-    // Also handle if params is already resolved
-    if (typeof params.id === 'string') loadPost(params.id);
-  }, []);
+    loadPost(postId);
+  }, [postId]);
 
   useEffect(() => {
     if (searchParams.get('saved')) {
@@ -71,7 +70,6 @@ export default function EditPostPage({ params }) {
     }
   }
 
-  const postId = typeof params.id === 'string' ? params.id : '…';
 
   return (
     <div className="flex bg-slate-950 min-h-screen">
