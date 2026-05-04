@@ -1,6 +1,6 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { initializeFirestore, memoryLocalCache } from 'firebase/firestore';
 import { getAnalytics, isSupported } from 'firebase/analytics';
 
 const firebaseConfig = {
@@ -15,7 +15,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
 const auth = getAuth(app);
-const db = getFirestore(app);
+
+// Use initializeFirestore instead of getFirestore to enable long-polling
+// This is much more stable on weak internet connections
+const db = initializeFirestore(app, {
+  experimentalAutoDetectLongPolling: true,
+  localCache: memoryLocalCache(),
+});
 
 // Initialize Analytics (optional, client-side only)
 let analytics;
