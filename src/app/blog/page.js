@@ -1,15 +1,14 @@
-'use client';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getPublishedPosts } from '@/lib/blog';
 
-export default function BlogPage() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export const metadata = {
+  title: 'Digital Growth Blog | MM Tech Spot Uganda',
+  description: 'Practical articles on website development, mobile apps, SEO, PPC, and digital marketing strategies for businesses in Uganda.',
+  keywords: 'digital marketing blog uganda, seo tips kampala, web development articles, mm tech spot blog',
+};
 
-  useEffect(() => {
-    getPublishedPosts().then((data) => { setPosts(data); setLoading(false); });
-  }, []);
+export default async function BlogPage() {
+  const posts = await getPublishedPosts();
 
   return (
     <div className="min-h-screen bg-white">
@@ -26,13 +25,7 @@ export default function BlogPage() {
       {/* Posts grid */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {loading ? (
-            <div className="grid gap-8 md:grid-cols-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="rounded-2xl border border-gray-100 bg-gray-50 p-8 h-52 animate-pulse" />
-              ))}
-            </div>
-          ) : posts.length === 0 ? (
+          {posts.length === 0 ? (
             <div className="text-center py-16 text-gray-400">
               <p className="text-lg">No posts published yet. Check back soon!</p>
             </div>

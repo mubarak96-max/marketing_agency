@@ -126,6 +126,11 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
     post?.publishedAt ||
     new Date().toISOString().slice(0, 10)
   );
+  // SEO fields
+  const [metaTitle, setMetaTitle] = useState(post?.metaTitle || '');
+  const [metaDescription, setMetaDescription] = useState(post?.metaDescription || '');
+  const [metaKeywords, setMetaKeywords] = useState(post?.metaKeywords || '');
+
   // Content state: visual stores HTML, markdown stores md string
   const [mdContent, setMdContent] = useState(
     post?.contentType === 'markdown' ? post.content || '' : ''
@@ -162,6 +167,9 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
       content,
       contentType: mode === 'visual' ? 'html' : 'markdown',
       readTime: calcReadTime(content),
+      metaTitle,
+      metaDescription,
+      metaKeywords,
     });
   }
 
@@ -354,23 +362,42 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
             </div>
           </div>
 
-          {/* Cover Image */}
-          <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-3">
-            <h3 className="text-sm font-semibold text-slate-200">Cover Image</h3>
-            <input
-              type="url"
-              value={coverImage}
-              onChange={(e) => setCoverImage(e.target.value)}
-              placeholder="https://…"
-              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
-            />
-            {coverImage && (
-              <img
-                src={coverImage}
-                alt="Cover preview"
-                className="w-full aspect-video object-cover rounded-lg mt-2"
-              />
             )}
+          </div>
+
+          {/* SEO Settings */}
+          <div className="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
+            <h3 className="text-sm font-semibold text-slate-200">SEO Settings (Optional)</h3>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Meta Title</label>
+              <input
+                type="text"
+                value={metaTitle}
+                onChange={(e) => setMetaTitle(e.target.value)}
+                placeholder="SEO Title"
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Meta Description</label>
+              <textarea
+                rows={3}
+                value={metaDescription}
+                onChange={(e) => setMetaDescription(e.target.value)}
+                placeholder="SEO Description"
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500 resize-none"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 block mb-1">Meta Keywords</label>
+              <input
+                type="text"
+                value={metaKeywords}
+                onChange={(e) => setMetaKeywords(e.target.value)}
+                placeholder="keyword1, keyword2"
+                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              />
+            </div>
           </div>
         </div>
       </div>

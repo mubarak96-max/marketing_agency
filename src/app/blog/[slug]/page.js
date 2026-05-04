@@ -1,7 +1,5 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { useParams, notFound } from 'next/navigation';
 import { getPostBySlug } from '@/lib/blog';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
 // Simple markdown → HTML (same as editor)
@@ -31,38 +29,38 @@ function renderContent(post) {
   return post.content; // HTML from visual editor
 }
 
-export default function BlogPostPage() {
-  const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [notFoundState, setNotFoundState] = useState(false);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
-  useEffect(() => {
-    if (!slug) return;
-    getPostBySlug(slug).then((data) => {
-      if (!data || !data.published) { setNotFoundState(true); return; }
-      setPost(data);
-    }).finally(() => setLoading(false));
-  }, [slug]);
+  if (!post) return {};
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-brand-primary border-t-transparent rounded-full animate-spin" />
-      </div>
-    );
-  }
+  return {
+    title: post.metaTitle || `${post.title} | MM Tech Spot`,
+    description: post.metaDescription || post.excerpt,
+    keywords: post.metaKeywords || post.tags?.join(', '),
+    openGraph: {
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      images: post.coverImage ? [post.coverImage] : [],
+      type: 'article',
+      publishedTime: post.publishedAt,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      images: post.coverImage ? [post.coverImage] : [],
+    },
+  };
+}
 
-  if (notFoundState || !post) {
-    return (
-      <div className="min-h-screen bg-white flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-4xl font-bold text-brand-dark mb-4">Post Not Found</h1>
-        <p className="text-gray-500 mb-8">This article doesn't exist or has been removed.</p>
-        <Link href="/blog" className="px-6 py-3 bg-brand-primary text-white rounded-xl font-semibold hover:bg-brand-accent transition-colors">
-          ← Back to Blog
-        </Link>
-      </div>
-    );
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post || !post.published) {
+    notFound();
   }
 
   const htmlContent = renderContent(post);
