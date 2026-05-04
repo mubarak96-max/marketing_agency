@@ -1,10 +1,10 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
+import SiteShell from '@/components/layout/SiteShell';
 import { LanguageProvider } from '@/components/i18n/LanguageProvider';
 import PageTracking from '@/components/analytics/Analytics';
 import { organizationSchema, siteConfig } from '@/data/site';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -46,60 +46,35 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <script
+      <body className={`${inter.className} min-h-screen bg-white text-brand-dark antialiased`}>
+        {/* Schema.org Organization Data */}
+        <Script
+          id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* PWA Meta Tags */}
-        <meta name="application-name" content={siteConfig.brandName} />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content={siteConfig.brandName} />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-        <meta name="msapplication-TileColor" content="#1a1a2e" />
-        <meta name="msapplication-tap-highlight" content="no" />
-
-        {/* Apple Touch Icons */}
-        <link rel="apple-touch-icon" href="/icons/icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180x180.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
-
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-
+        
         {/* Service Worker Registration */}
-        <script
+        <Script
+          id="register-sw"
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
                   navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                      console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                      console.log('SW registration failed: ', registrationError);
-                    });
+                    .then(function(r) { console.log('SW registered:', r); })
+                    .catch(function(e) { console.log('SW failed:', e); });
                 });
               }
             `,
           }}
         />
-      </head>
-      <body className={`${inter.className} min-h-screen bg-white text-dubai-dark antialiased`}>
+
         <LanguageProvider>
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-            <PageTracking />
-          </div>
+          <SiteShell>
+            {children}
+          </SiteShell>
+          <PageTracking />
         </LanguageProvider>
       </body>
     </html>

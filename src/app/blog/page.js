@@ -1,42 +1,73 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { blogPosts } from '@/data/blogPosts';
+import { getPublishedPosts } from '@/lib/blog';
 
-export const metadata = {
-  title: 'Digital Marketing & Web Development Blog Uganda | MM Tech Spot',
-  description: 'Guides on website development, app development cost, Google Ads, and digital marketing for businesses in Uganda.',
-  keywords: 'website development Uganda blog, app development cost Uganda, google ads Uganda, website builders small business Uganda',
-};
+export default function BlogPage() {
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export default function Blog() {
+  useEffect(() => {
+    getPublishedPosts().then((data) => { setPosts(data); setLoading(false); });
+  }, []);
+
   return (
-    <div className="min-h-screen bg-luxury-white">
-      <section className="relative py-20 bg-dubai-dark text-luxury-white">
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <section className="relative py-20 bg-brand-dark text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">Digital Growth Blog</h1>
-          <p className="text-xl md:text-2xl text-luxury-white/90 max-w-3xl mx-auto">
-            Practical articles on websites, apps, SEO, PPC, and digital growth for businesses in Kampala and across Uganda.
+          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
+            Practical articles on websites, apps, SEO, PPC, and digital growth for businesses in Uganda.
           </p>
         </div>
       </section>
 
+      {/* Posts grid */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2">
-            {blogPosts.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="rounded-2xl border border-border-light bg-white p-8 shadow-sm hover:shadow-lg transition-shadow"
-              >
-                <div className="text-sm font-semibold text-brand-accent mb-3">
-                  {post.category} · {post.readTime}
-                </div>
-                <h2 className="text-2xl font-bold text-dubai-dark mb-4">{post.title}</h2>
-                <p className="text-gray-600 mb-6">{post.excerpt}</p>
-                <span className="text-dubai-gold font-semibold">Read article</span>
-              </Link>
-            ))}
-          </div>
+          {loading ? (
+            <div className="grid gap-8 md:grid-cols-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="rounded-2xl border border-gray-100 bg-gray-50 p-8 h-52 animate-pulse" />
+              ))}
+            </div>
+          ) : posts.length === 0 ? (
+            <div className="text-center py-16 text-gray-400">
+              <p className="text-lg">No posts published yet. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="grid gap-8 md:grid-cols-2">
+              {posts.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.slug}`}
+                  className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm hover:shadow-lg hover:border-brand-primary/30 transition-all duration-300"
+                >
+                  {post.coverImage && (
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="w-full aspect-video object-cover rounded-xl mb-5"
+                    />
+                  )}
+                  <div className="text-sm font-semibold text-brand-primary mb-3">
+                    {[post.category, post.readTime].filter(Boolean).join(' · ')}
+                  </div>
+                  <h2 className="text-2xl font-bold text-brand-dark mb-4 group-hover:text-brand-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-500 mb-6 line-clamp-3">{post.excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-brand-primary font-semibold text-sm group-hover:underline">
+                      Read article →
+                    </span>
+                    <span className="text-gray-400 text-xs">{post.publishedAt}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </div>
