@@ -113,7 +113,7 @@ function slugify(str) {
 export default function BlogEditor({ post = null, onSave, isSaving }) {
   const editorRef = useRef(null);
   const [mode, setMode] = useState('visual'); // 'visual' | 'markdown'
-  const [title, setTitle] = useState(post?.title || '');
+  const [postTitle, setPostTitle] = useState(post?.title || '');
   const [slug, setSlug] = useState(post?.slug || '');
   const [slugEdited, setSlugEdited] = useState(!!post?.slug);
   const [excerpt, setExcerpt] = useState(post?.excerpt || '');
@@ -138,8 +138,8 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
 
   // Auto-generate slug from title
   useEffect(() => {
-    if (!slugEdited && title) setSlug(slugify(title));
-  }, [title, slugEdited]);
+    if (!slugEdited && postTitle) setSlug(slugify(postTitle));
+  }, [postTitle, slugEdited]);
 
   // Sync visual editor initial content
   useEffect(() => {
@@ -156,7 +156,7 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
   function handleSave(publishStatus) {
     const content = getContent();
     onSave({
-      title,
+      title: postTitle,
       slug,
       excerpt,
       category,
@@ -210,9 +210,11 @@ export default function BlogEditor({ post = null, onSave, isSaving }) {
           {/* Title */}
           <input
             type="text"
+            id="post-title-input"
             placeholder="Post title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={postTitle}
+            onChange={(e) => setPostTitle(e.target.value)}
+            required
             className="w-full bg-transparent text-3xl font-bold text-white placeholder-slate-600 border-none outline-none focus:ring-0 py-2"
           />
           <div className="flex items-center gap-2 text-xs text-slate-500">
