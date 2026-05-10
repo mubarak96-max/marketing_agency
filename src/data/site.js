@@ -1,6 +1,6 @@
 export const siteConfig = {
   brandName: 'MM Tech Spot',
-  domain: 'https://mmtechspot.com',
+  domain: 'https://mmtechspot.site',
   email: 'mmtechspot@gmail.com',
   phoneDisplay: '+256 759 984846',
   phoneHref: '+256759984846',

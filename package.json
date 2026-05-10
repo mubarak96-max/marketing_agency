@@ -14,6 +14,7 @@
     "@vercel/og": "^0.5.9",
     "firebase": "^12.12.1",
     "firebase-admin": "^13.8.0",
+    "html2canvas": "^1.4.1",
     "lucide-react": "^0.454.0",
     "marked": "^12.0.0",
     "next": "^16.2.4",
