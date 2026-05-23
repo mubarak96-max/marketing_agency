@@ -54,6 +54,7 @@ const Navbar = () => {
             })) || []
         },
         { name: 'Portfolio', href: '/portfolio' },
+        { name: 'Developer', href: '/mubarak-mutesasira-web-designer-in-uganda' },
         { name: 'Blog', href: '/blog' },
         { name: 'About', href: '/about' },
         { name: 'Contact', href: '/contact' },
