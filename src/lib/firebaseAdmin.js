@@ -8,18 +8,38 @@ function getFirebaseAdminConfig() {
   const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
   if (!projectId || !clientEmail || !privateKey) {
-    throw new Error('Firebase Admin credentials are not fully configured.');
+    return null;
   }
 
   return { projectId, clientEmail, privateKey };
 }
 
-const adminApp =
-  getApps()[0] ??
-  initializeApp({
-    credential: cert(getFirebaseAdminConfig()),
-  });
+export function isFirebaseAdminConfigured() {
+  return getFirebaseAdminConfig() !== null;
+}
 
-const adminDb = getFirestore(adminApp);
+let cachedDb = undefined;
 
-export { adminDb };
+export function getAdminDb() {
+  if (cachedDb !== undefined) return cachedDb;
+
+  const config = getFirebaseAdminConfig();
+  if (!config) {
+    cachedDb = null;
+    return cachedDb;
+  }
+
+  const adminApp =
+    getApps()[0] ??
+    initializeApp({
+      credential: cert(config),
+    });
+
+  cachedDb = getFirestore(adminApp);
+  return cachedDb;
+}
+
+// Lazily initialized. Null when FIREBASE_* env vars are missing (e.g. Cloudflare
+// build without secrets) so prerender doesn't crash at import time. Callers
+// must handle null and fall back gracefully.
+export const adminDb = getAdminDb();

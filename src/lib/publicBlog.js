@@ -35,6 +35,10 @@ function getSortableTimestamp(value) {
 }
 
 export async function getPublishedPostsPublic() {
+  if (!adminDb) {
+    return [];
+  }
+
   try {
     const snap = await adminDb.collection('blogPosts').where('published', '==', true).get();
 
@@ -48,6 +52,10 @@ export async function getPublishedPostsPublic() {
 }
 
 export async function getPublishedPostBySlugPublic(slug) {
+  if (!adminDb) {
+    return null;
+  }
+
   try {
     const snap = await adminDb
       .collection('blogPosts')
